@@ -2,6 +2,8 @@
 
 namespace Elegant\Foundation\Http;
 
+use Elegant\Support\Str;
+
 class FormRequest
 {
     /**
