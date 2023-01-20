@@ -3,6 +3,7 @@
 namespace Elegant\Foundation\Http;
 
 use Elegant\Support\Str;
+use Elegant\Support\Collection;
 
 class FormRequest
 {
