@@ -182,7 +182,18 @@ class FormRequest
             }
         }
 
-        $this->error_data = $this->form_validation->error_array();
+        $error_array = $this->form_validation->error_array();
+
+        $errors = new Collection();
+        foreach ($error_array as $index => $error) {
+            $errors->push((object)[
+                $index => $error
+            ]);
+        }
+
+        $this->error_data = $errors;
+
+        ci()->view->share('errors', $errors);
 
         return $this->form_validation->run();
     }
